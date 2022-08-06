@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/c215eea7b4.js" crossorigin="anonymous"></script>
+
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-auto">
+                <input class="formControl" type="search" id="city-input" placeholder="Search city...">
+                <button class="searchButton" id="search-button">Search...</button>
+                <button class="currentLocationButton" id="current-location-button">Current
+                    Location</button>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body align-items-center d-flex justify-content-center flex-column">
+                        <h1 id="current-city">Toronto</h1>
+                        <h4 class="card-title" id="description">Partly Sunny</h4>
+                        <h1 class="card-title"><span id="current-temp">88</span>
+                            <a href="#" class="card-title" id="clink">°C </a><span class="divider">| </span>
+                            <a href="#" class="card-title" id="flink">°F</a>
+                        </h1>
+                        <em>
+                            <h6 class="card-title" id="current-date-time"></h6>
+                        </em>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body align-items-center d-flex justify-content-center flex-column">
+                        <i class="fa-solid fa-cloud-sun mx-auto currentTempEmoji"></i>
+
+                        <h6 class="card-title" id="feel-temp">Feels like 90°F</h6>
+                        <h6 class="card-title" id="humidity">Humidity: 55%</h6>
+                        <h6 class="card-title" id="wind">Wind: 5 mph</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row row-cols-5">
+
+            <div class="col">
+                <div class="card mx-auto fiveDayCard">
+                    <div class="card-body align-items-center d-flex justify-content-center flex-column fiveDayCardBody">
+                        <h5 class="card-title day">Friday</h5>
+                        <i class="fa-solid fa-wind mx-auto futureFridayEmoji"></i>
+                        <p class="card-subtitle forecast">53°F</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card mx-auto">
+                    <div class="card-body align-items-center d-flex justify-content-center flex-column fiveDayCard">
+                        <h5 class="card-title day">Saturday</h5>
+                        <i class="fa-solid fa-cloud-sun mx-auto futureSaturdayEmoji"></i>
+                        <p class="card-subtitle forecast">53°F</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card mx-auto">
+                    <div class="card-body align-items-center d-flex justify-content-center flex-column fiveDayCard">
+                        <h5 class="card-title day">Sunday</h5>
+                        <i class="fa-solid fa-cloud-bolt mx-auto futureSundayEmoji"></i>
+                        <p class="card-subtitle forecast">53°F</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card mx-auto">
+                    <div class="card-body align-items-center d-flex justify-content-center flex-column fiveDayCard">
+                        <h5 class="card-title day">Monday</h5>
+                        <i class="fa-solid fa-cloud-showers-heavy mx-auto futureMondayEmoji"></i>
+                        <p class="card-subtitle forecast">53°F</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card mx-auto">
+                    <div class="card-body align-items-center d-flex justify-content-center flex-column fiveDayCard">
+                        <h5 class="card-title day">Tuesday</h5>
+                        <i class="fa-solid fa-sun mx-auto futureTuesdayEmoji"></i>
+                        <p class="card-subtitle forecast">53°F</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <p class="footer"><span class="coderName">Parker</span> © 2022</p>
+    </div>
+
+</body>
+<script src="src/index.js"></script>
+
+</html>
