@@ -11,18 +11,6 @@ h6 {
   font-weight: 300;
 }
 
-a {
-  color: #5a6275;
-  font-size: 16px;
-  outline: none;
-  text-decoration: none;
-  vertical-align: super;
-}
-
-a:hover {
-  color: #ab47bc;
-}
-
 p {
   font-size: 20px;
 }
@@ -112,6 +100,18 @@ p {
   vertical-align: super;
 }
 
+.unitToggle {
+  color: #5a6275;
+  font-size: 16px;
+  outline: none;
+  text-decoration: none;
+  vertical-align: super;
+}
+
+.unitToggle:hover {
+  color: #ab47bc;
+}
+
 .currentTempEmoji {
   font-size: 40px;
   color: #21376a;
@@ -169,9 +169,12 @@ p {
 }
 
 .footer {
-  font-size: 12px;
-  margin-bottom: 0%;
+  font-size: 14px;
   text-align: center;
+}
+
+.gitLink {
+  text-decoration: none;
 }
 
 .coderName {
@@ -183,7 +186,7 @@ p {
     #2196f3,
     #26c6da,
     #43a047,
-    #eeff41,
+    #fff641,
     #f9a825,
     #ff5722
   );
