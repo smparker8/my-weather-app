@@ -1,0 +1,193 @@
+h1,
+h2,
+h4,
+h5,
+h6,
+p {
+  color: #5a6275;
+}
+
+h6 {
+  font-weight: 300;
+}
+
+a {
+  color: #5a6275;
+  font-size: 16px;
+  outline: none;
+  text-decoration: none;
+  vertical-align: super;
+}
+
+a:hover {
+  color: #ab47bc;
+}
+
+p {
+  font-size: 20px;
+}
+
+.container {
+  font-family: Poppins;
+  width: 800px;
+  border: 1px solid #e8e7ff;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin: 20px auto;
+  background-color: #f9f7f7;
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 10%);
+}
+
+.row {
+  padding: 10px 10px;
+  margin: 20px auto;
+}
+
+.fiveDayCard,
+.fiveDayCardBody {
+  background-color: rgba(128, 128, 128, 30%);
+  border-radius: 10px;
+}
+
+.formControl::placeholder {
+  color: #ab47bc;
+  font-weight: 300;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}
+
+.formControl:valid {
+  color: #ab47bc;
+  font-size: 14px;
+}
+
+#city-input {
+  border: 3px solid #ab47bc;
+  border-radius: 30px;
+  margin: 10px 10px;
+  padding: 10px;
+}
+
+#search-button {
+  background-color: #ab47bc;
+  border: 3px solid #ab47bc;
+  border-radius: 30px;
+  color: #ffff;
+  margin: 10px 10px;
+  padding: 10px 30px;
+  transition: all 250ms ease-in-out;
+}
+
+#search-button:hover {
+  background-color: #ffff;
+  border: 3px solid #ab47bc;
+  color: #ab47bc;
+}
+
+#current-location-button {
+  background-color: #f9f7f7;
+  border: 3px solid #21376a;
+  border-radius: 30px;
+  color: #21376a;
+  margin: 10px 10px;
+  padding: 10px 30px;
+  transition: all 250ms ease-in-out;
+}
+
+#current-location-button:hover {
+  background-color: #21376a;
+  border: 3px solid #21376a;
+  color: #ffff;
+}
+
+.card {
+  background-color: #f9f7f7;
+  border: none;
+}
+
+.divider {
+  color: #5a6275;
+  font-size: 16px;
+  vertical-align: super;
+}
+
+.currentTempEmoji {
+  font-size: 40px;
+  color: #21376a;
+  padding: 15px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#current-date-time {
+  font-size: 12px;
+}
+
+.futureFridayEmoji {
+  font-size: 25px;
+  color: rgba(255, 73, 95, 70%);
+  margin: 5px auto;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.futureSaturdayEmoji {
+  font-size: 25px;
+  color: rgba(255, 168, 30, 70%);
+  margin: 5px auto;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.futureSundayEmoji {
+  font-size: 25px;
+  color: rgba(255, 245, 92, 70%);
+  margin: 5px auto;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.futureMondayEmoji {
+  font-size: 25px;
+  color: rgba(0, 128, 0, 70%);
+  margin: 5px auto;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.futureTuesdayEmoji {
+  font-size: 25px;
+  color: rgba(0, 0, 255, 70%);
+  margin: 5px auto;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-subtitle {
+  margin: 5px 5px;
+}
+
+#city-input,
+#current-city,
+#description {
+  text-transform: capitalize;
+}
+
+.footer {
+  font-size: 12px;
+  margin-bottom: 0%;
+  text-align: center;
+}
+
+.coderName {
+  background: linear-gradient(
+    to right,
+    #ef5350,
+    #f48fb1,
+    #7e57c2,
+    #2196f3,
+    #26c6da,
+    #43a047,
+    #eeff41,
+    #f9a825,
+    #ff5722
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
