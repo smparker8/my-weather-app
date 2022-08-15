@@ -10,6 +10,8 @@ function cityInput(event) {
   citySearch(cityInput.value);
 }
 
+citySearch("Toronto");
+
 let searchButton = document.querySelector(".searchButton");
 searchButton.addEventListener("click", cityInput);
 
@@ -46,27 +48,7 @@ let minutes = currentDate.getMinutes();
 let currentDateTime = document.querySelector("#current-date-time");
 currentDateTime.innerHTML = `Last Updated: ${day}, ${month} ${date} at ${hours}:${minutes}`;
 
-//Change id of current-temp to alternate between C and F
-function celsiusClick(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `19`;
-}
-
-function farenheitClick(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `66`;
-}
-
-let celsiusTemp = document.querySelector("#clink");
-celsiusTemp.addEventListener("click", celsiusClick);
-
-let farenheitTemp = document.querySelector("#flink");
-farenheitTemp.addEventListener("click", farenheitClick);
-
 function showWeather(response) {
-  console.log(response);
   let city = response.data.name;
   let cityName = document.querySelector("#current-city");
   cityName.innerHTML = city;
@@ -90,6 +72,12 @@ function showWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let windUpdate = document.querySelector("#wind");
   windUpdate.innerHTML = `Wind: ${wind} mph`;
+
+  let iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 //Use current location button
