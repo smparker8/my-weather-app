@@ -102,6 +102,7 @@ p {
 
 .unitToggle {
   color: #5a6275;
+  cursor: default;
   font-size: 16px;
   outline: none;
   text-decoration: none;
