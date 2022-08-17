@@ -1,6 +1,7 @@
+//Search button
 function citySearch(cityInput) {
   let apiKey = `ae3f019cff78b99c91cc38cabf5b452c`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -9,8 +10,6 @@ function cityInput(event) {
   let cityInput = document.querySelector("#city-input");
   citySearch(cityInput.value);
 }
-
-citySearch("Toronto");
 
 let searchButton = document.querySelector(".searchButton");
 searchButton.addEventListener("click", cityInput);
@@ -57,7 +56,7 @@ function showWeather(response) {
   let descriptionDisplay = document.querySelector("#description");
   descriptionDisplay.innerHTML = description;
 
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(celsiusTemp);
   let tempUpdate = document.querySelector("#current-temp");
   tempUpdate.innerHTML = temperature;
 
@@ -73,17 +72,20 @@ function showWeather(response) {
   let windUpdate = document.querySelector("#wind");
   windUpdate.innerHTML = `Wind: ${wind} mph`;
 
+  //Change the weather emoji icon with API weather description data
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celsiusTemp = response.data.main.temp;
 }
 
 //Use current location button
 function displayCurrentLocation(position) {
   let apiKey = `ae3f019cff78b99c91cc38cabf5b452c`;
-  let units = `imperial`;
+  let units = `metric`;
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
@@ -97,3 +99,27 @@ function clickButton(event) {
 
 let clickLocation = document.querySelector(".currentLocationButton");
 clickLocation.addEventListener("click", clickButton);
+
+//Toggle between C and F temperature readings
+function displayFarenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let farenheitLink = document.querySelector("#flink");
+farenheitLink.addEventListener("click", displayFarenheitTemp);
+
+let celsiusLink = document.querySelector("#clink");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+citySearch("Toronto");
