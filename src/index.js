@@ -47,6 +47,37 @@ let minutes = currentDate.getMinutes();
 let currentDateTime = document.querySelector("#current-date-time");
 currentDateTime.innerHTML = `Last Updated: ${day}, ${month} ${date} at ${hours}:${minutes}`;
 
+//Function for overwriting HTML for daily forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row row-cols-5">`;
+
+  let days = ["Friday", "Saturday", "Sunday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `          <div class="col">
+                    <div class="card mx-auto fiveDayCard">
+                        <div class="card-body align-items-center d-flex justify-content-center flex-column fiveDayCardBody">
+                            <h5 class="card-title forecast-day">${day}</h5>
+                            <i class="fa-solid fa-wind mx-auto futureFridayEmoji"></i>
+                            <p class="forecast-temp">
+                                <span class="forecast-temp-high">
+                                    53° </span>
+                                <span class="forecast-temp-low">
+                                    36°
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//Function to display all weather properties from API and overwrite HTML
 function showWeather(response) {
   let city = response.data.name;
   let cityName = document.querySelector("#current-city");
@@ -92,6 +123,7 @@ function displayCurrentLocation(position) {
   axios.get(apiUrl).then(showWeather);
 }
 
+//Location Button function using geolocation navigator
 function clickButton(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(displayCurrentLocation);
@@ -122,4 +154,6 @@ farenheitLink.addEventListener("click", displayFarenheitTemp);
 let celsiusLink = document.querySelector("#clink");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
+//Calling functions from above
 citySearch("Toronto");
+displayForecast();
