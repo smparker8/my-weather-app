@@ -31,32 +31,32 @@
         <div class="row">
 
             <div class="col">
-                <div class="card">
-                    <div class="card-body align-items-center d-flex justify-content-center flex-column">
-                        <h1 id="current-city"></h1>
-                        <h4 class="card-title" id="description"></h4>
-                        <h1 class="card-title"><span id="current-temp"></span>
-                            <a href="#" class="card-title unitToggle" id="clink">°C </a><span class="divider">| </span>
-                            <a href="#" class="card-title unitToggle" id="flink">°F</a>
-                        </h1>
-                        <em>
-                            <h6 class="card-title" id="current-date-time"></h6>
-                        </em>
 
-                    </div>
+                <div class="align-items-center d-flex justify-content-center flex-column">
+                    <h1 class="currentCity" id="current-city"></h1>
+                    <h4 class="currentCityDescription" id="description"></h4>
+                    <h1 class="currentCityTemp"><span id="current-temp"></span>
+                        <a href="#" class="unitToggle" id="clink">°C </a><span class="divider">| </span>
+                        <a href="#" class="unitToggle" id="flink">°F</a>
+                    </h1>
+                    <em>
+                        <h6 class="lastUpdate" id="current-date-time"></h6>
+                    </em>
+
                 </div>
+
             </div>
             <div class="col">
-                <div class="card">
-                    <div class="card-body align-items-center d-flex justify-content-center flex-column">
-                        <img src="" alt="weather-icon" id="weather-icon">
+
+                <div class="align-items-center d-flex justify-content-center flex-column">
+                    <img src="" alt="weather-icon" id="weather-icon" class="current-weather-icon">
 
 
-                        <h6 class="card-title" id="feel-temp"></h6>
-                        <h6 class="card-title" id="humidity"></h6>
-                        <h6 class="card-title" id="wind"></h6>
-                    </div>
+                    <h6 class="feelTemp" id="feel-temp"></h6>
+                    <h6 id="humidity"></h6>
+                    <h6 id="wind"></h6>
                 </div>
+
             </div>
 
         </div>
