@@ -48,7 +48,8 @@ let currentDateTime = document.querySelector("#current-date-time");
 currentDateTime.innerHTML = `Last Updated: ${day}, ${month} ${date} at ${hours}:${minutes}`;
 
 //Function for overwriting HTML for daily forecast
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row row-cols-5">`;
 
@@ -75,6 +76,15 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+//Function to Display Forecast data based on coordinates of city input
+function pullForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `ae3f019cff78b99c91cc38cabf5b452c`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //Function to display all weather properties from API and overwrite HTML
@@ -111,6 +121,8 @@ function showWeather(response) {
   );
 
   celsiusTemp = response.data.main.temp;
+
+  pullForecast(response.data.coord);
 }
 
 //Use current location button
@@ -156,4 +168,3 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 //Calling functions from above
 citySearch("Toronto");
-displayForecast();
