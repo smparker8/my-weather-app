@@ -113,54 +113,12 @@ p {
   color: #ab47bc;
 }
 
-.currentTempEmoji {
-  font-size: 40px;
-  color: #21376a;
-  padding: 15px;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-}
-
 #current-date-time {
   font-size: 12px;
 }
 
 .forecast-day {
   font-size: 14px;
-}
-
-.futureFridayEmoji {
-  font-size: 25px;
-  color: rgba(255, 73, 95, 70%);
-  margin: 5px auto;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.futureSaturdayEmoji {
-  font-size: 25px;
-  color: rgba(255, 168, 30, 70%);
-  margin: 5px auto;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.futureSundayEmoji {
-  font-size: 25px;
-  color: rgba(255, 245, 92, 70%);
-  margin: 5px auto;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-}
-
-.futureMondayEmoji {
-  font-size: 25px;
-  color: rgba(0, 128, 0, 70%);
-  margin: 5px auto;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.futureTuesdayEmoji {
-  font-size: 25px;
-  color: rgba(0, 0, 255, 70%);
-  margin: 5px auto;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .forecast-temp {
