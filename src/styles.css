@@ -35,12 +35,6 @@ h6 {
   margin: 20px auto;
 }
 
-.forecast-card,
-.forecast-card-body {
-  background-color: rgb(33, 55, 106, 20%);
-  border-radius: 10px;
-}
-
 .formControl::placeholder {
   color: #ab47bc;
   font-weight: 300;
@@ -78,19 +72,19 @@ h6 {
 }
 
 #current-location-button {
-  background-color: #f9f7f7;
+  background-color: #21376a;
   border: 3px solid #21376a;
   border-radius: 30px;
-  color: #21376a;
+  color: #f9f7f7;
   margin: 10px 10px;
   padding: 10px 30px;
   transition: all 250ms ease-in-out;
 }
 
 #current-location-button:hover {
-  background-color: #21376a;
+  background-color: #f9f7f7;
   border: 3px solid #21376a;
-  color: #ffff;
+  color: #21376a;
 }
 
 .card {
@@ -103,7 +97,15 @@ h6 {
   margin-bottom: 15px;
 }
 
+.currentUnit {
+  color: #5a6275;
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: top;
+}
+
 .lastUpdate {
+  font-size: 12px;
   margin-top: 5px;
 }
 
@@ -112,31 +114,14 @@ h6 {
   border-radius: 50px;
 }
 
-.divider {
-  color: #5a6275;
-  font-size: 16px;
-  vertical-align: super;
-}
-
-.unitToggle {
-  color: #5a6275;
-  cursor: default;
-  font-size: 16px;
-  outline: none;
-  text-decoration: none;
-  vertical-align: super;
-}
-
-.unitToggle:hover {
-  color: #ab47bc;
-}
-
-#current-date-time {
-  font-size: 12px;
-}
-
 .feelTemp {
   padding-top: 12px;
+}
+
+.forecast-card,
+.forecast-card-body {
+  background-color: rgb(33, 55, 106, 20%);
+  border-radius: 10px;
 }
 
 .forecast-day {
@@ -156,12 +141,6 @@ h6 {
 
 .forecast-temp-low {
   opacity: 0.8;
-}
-
-#city-input,
-#current-city,
-#description {
-  text-transform: capitalize;
 }
 
 .footer {
@@ -189,4 +168,10 @@ h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+#city-input,
+#current-city,
+#description {
+  text-transform: capitalize;
 }
