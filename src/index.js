@@ -47,31 +47,57 @@ let minutes = currentDate.getMinutes();
 let currentDateTime = document.querySelector("#current-date-time");
 currentDateTime.innerHTML = `Last Updated: ${day}, ${month} ${date} at ${hours}:${minutes}`;
 
+//Function to format days in 5-day forecast
+function formatForescastDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  console.log(date);
+  let day = date.getDay();
+  console.log(day);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
 //Function for overwriting HTML for daily forecast
 function displayForecast(response) {
+  let dailyForecast = response.data.daily;
   console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row row-cols-5">`;
 
-  let days = ["Friday", "Saturday", "Sunday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `          <div class="col">
-                    <div class="card mx-auto fiveDayCard">
-                        <div class="card-body align-items-center d-flex justify-content-center flex-column fiveDayCardBody">
-                            <h5 class="card-title forecast-day">${day}</h5>
-                            <i class="fa-solid fa-wind mx-auto futureFridayEmoji"></i>
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `          <div class="col">
+                    <div class="card mx-auto">
+                        <div class="card-body align-items-center d-flex justify-content-center flex-column">
+                            <h5 class="card-title forecast-day">${formatForescastDays(
+                              forecastDay.dt
+                            )}</h5>
+                           <img src="http://openweathermap.org/img/wn/${
+                             forecastDay.weather[0].icon
+                           }@2x.png"
+                           alt="weather-icon" />
                             <p class="forecast-temp">
                                 <span class="forecast-temp-high">
-                                    53° </span>
+                                   ${Math.round(forecastDay.temp.max)}° </span>
                                 <span class="forecast-temp-low">
-                                    36°
+                                    ${Math.round(forecastDay.temp.min)}° 
                                 </span>
                             </p>
                         </div>
                     </div>
                 </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -83,7 +109,6 @@ function pullForecast(coordinates) {
   console.log(coordinates);
   let apiKey = `ae3f019cff78b99c91cc38cabf5b452c`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -103,7 +128,7 @@ function showWeather(response) {
 
   let feelsLike = Math.round(response.data.main.feels_like);
   let feelTempUpdate = document.querySelector("#feel-temp");
-  feelTempUpdate.innerHTML = `Feels like: ${feelsLike}°F`;
+  feelTempUpdate.innerHTML = `Feels like: ${feelsLike}°C`;
 
   let humidity = Math.round(response.data.main.humidity);
   let humidityUpdate = document.querySelector("#humidity");
