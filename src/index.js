@@ -78,8 +78,8 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `          <div class="col">
-                    <div class="card mx-auto">
-                        <div class="card-body align-items-center d-flex justify-content-center flex-column">
+                    <div class="card mx-auto forecast-card">
+                        <div class="card-body align-items-center d-flex justify-content-center flex-column forecast-card-body">
                             <h5 class="card-title forecast-day">${formatForescastDays(
                               forecastDay.dt
                             )}</h5>
