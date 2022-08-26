@@ -118,6 +118,12 @@ h6 {
   padding-top: 12px;
 }
 
+.feel-temp,
+.humidity,
+.wind {
+  font-weight: 600;
+}
+
 .forecast-card,
 .forecast-card-body {
   background-color: rgb(33, 55, 106, 20%);

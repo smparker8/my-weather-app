@@ -145,15 +145,15 @@ function showWeather(response) {
 
   let feelsLike = Math.round(response.data.main.feels_like);
   let feelTempUpdate = document.querySelector("#feel-temp");
-  feelTempUpdate.innerHTML = `Feels like: ${feelsLike}°F`;
+  feelTempUpdate.innerHTML = `Feels like: <span class="feel-temp">${feelsLike}°F</span>`;
 
   let humidity = Math.round(response.data.main.humidity);
   let humidityUpdate = document.querySelector("#humidity");
-  humidityUpdate.innerHTML = `Humidity: ${humidity} %`;
+  humidityUpdate.innerHTML = `Humidity: <span class="humidity">${humidity}%</span>`;
 
   let wind = Math.round(response.data.wind.speed);
   let windUpdate = document.querySelector("#wind");
-  windUpdate.innerHTML = `Wind: ${wind} mph`;
+  windUpdate.innerHTML = `Wind: <span class="wind">${wind} mph</span>`;
 
   //Change the weather emoji icon with API weather description data
   let iconElement = document.querySelector("#weather-icon");
