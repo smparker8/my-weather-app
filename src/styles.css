@@ -10,6 +10,10 @@ h6 {
   font-weight: 400;
 }
 
+hr {
+  color: rgb(39, 32, 68);
+}
+
 .container {
   font-family: Poppins;
   width: 800px;
@@ -147,6 +151,16 @@ h6 {
 
 .forecast-temp-low {
   opacity: 0.8;
+}
+
+.precip-chance {
+  color: rgb(39, 32, 68);
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.precip {
+  margin-bottom: 0;
 }
 
 .footer {

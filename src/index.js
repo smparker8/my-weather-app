@@ -88,6 +88,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row row-cols-5">`;
 
   dailyForecast.forEach(function (forecastDay, index) {
+    console.log(forecastDay);
     if (index < 5) {
       forecastHTML =
         forecastHTML +
@@ -108,6 +109,13 @@ function displayForecast(response) {
                                     ${Math.round(forecastDay.temp.min)}° 
                                 </span>
                             </p>
+                            <hr width="100%" />
+                            <div class="precip-chance">
+                              <p class="precip"> 
+                               <i class="fa-solid fa-droplet"></i> 
+                                ${Math.round(forecastDay.pop * 100)}%
+                              </p>
+                            </div>
                         </div>
                     </div>
                 </div>`;
