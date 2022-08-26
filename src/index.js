@@ -88,7 +88,6 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row row-cols-5">`;
 
   dailyForecast.forEach(function (forecastDay, index) {
-    console.log(forecastDay);
     if (index < 5) {
       forecastHTML =
         forecastHTML +
@@ -149,7 +148,6 @@ function showWeather(response) {
 
   let lastUpdate = document.querySelector("#current-date-time");
   lastUpdate.innerHTML = formatDate(response.data.dt * 1000);
-  console.log(response.data.dt);
 
   let feelsLike = Math.round(response.data.main.feels_like);
   let feelTempUpdate = document.querySelector("#feel-temp");
